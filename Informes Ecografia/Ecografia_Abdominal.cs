@@ -53,16 +53,17 @@ namespace Informes_Ecografia
             Font Cuerpo = new Font("Calibri (Body)", 14, FontStyle.Regular, GraphicsUnit.Point);
             Font Titulos = new Font("Calibri (Body)", 14, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             Font Ecos = new Font("Calibri (Body)", 10, FontStyle.Regular, GraphicsUnit.Point);
+            
+            e.Graphics.DrawString("Dra. Marina Irrazabal", Cabezera, Brushes.Black, new Rectangle(10, 10, 500, 500));
+            //Pen LapizNegroRect = new Pen(Color.Black, 6.0F);
+            //Rectangle Rect_Cabezera = new Rectangle(0, 0, 500, 500);
 
-            Pen LapizNegroRect = new Pen(Color.Black, 6.0F);
-            Rectangle Rect_Cabezera = new Rectangle(0, 0, 500, 500);
+            //            // Set the DashCap to round.
+            //LapizNegroRect.DashCap = System.Drawing.Drawing2D.DashCap.Round;
 
-                        // Set the DashCap to round.
-            LapizNegroRect.DashCap = System.Drawing.Drawing2D.DashCap.Round;
-
-            // Create a custom dash pattern.
-            LapizNegroRect.DashPattern = new float[] { 4.0F, 2.0F, 1.0F, 3.0F };
-            e.Graphics.DrawRectangle(LapizNegroRect, Rect_Cabezera);
+            //// Create a custom dash pattern.
+            //LapizNegroRect.DashPattern = new float[] { 4.0F, 2.0F, 1.0F, 3.0F };
+            //e.Graphics.DrawRectangle(LapizNegroRect, Rect_Cabezera);
 
 
         }

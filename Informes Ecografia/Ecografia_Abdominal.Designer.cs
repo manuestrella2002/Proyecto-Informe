@@ -39,6 +39,7 @@ namespace Informes_Ecografia
             this.textBox_Edad_ = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.textControl1 = new TXTextControl.TextControl();
             this.SuspendLayout();
             // 
             // AyN_Eco_Abd
@@ -128,11 +129,22 @@ namespace Informes_Ecografia
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // textControl1
+            // 
+            this.textControl1.Font = new System.Drawing.Font("Arial", 10F);
+            this.textControl1.Location = new System.Drawing.Point(515, 99);
+            this.textControl1.Name = "textControl1";
+            this.textControl1.Size = new System.Drawing.Size(600, 200);
+            this.textControl1.TabIndex = 9;
+            this.textControl1.Text = "textControl1";
+            this.textControl1.UserNames = null;
+            // 
             // Ecografia_Abdominal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 350);
+            this.Controls.Add(this.textControl1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_Edad_);
             this.Controls.Add(this.textBox_Fecha_);
@@ -161,5 +173,6 @@ namespace Informes_Ecografia
         private System.Windows.Forms.TextBox textBox_Edad_;
         private System.Windows.Forms.Button button1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private TXTextControl.TextControl textControl1;
     }
 }
