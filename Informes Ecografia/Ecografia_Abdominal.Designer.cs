@@ -39,7 +39,15 @@ namespace Informes_Ecografia
             this.textBox_Edad_ = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.textControl1 = new TXTextControl.TextControl();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_Mot_Consulta = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.radioButton_Normal = new System.Windows.Forms.RadioButton();
+            this.radioButton_Anormal = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_Solicitante = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // AyN_Eco_Abd
@@ -64,7 +72,7 @@ namespace Informes_Ecografia
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 144);
+            this.label2.Location = new System.Drawing.Point(491, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 2;
@@ -74,16 +82,17 @@ namespace Informes_Ecografia
             // 
             this.textBox_Comentarios.AcceptsTab = true;
             this.textBox_Comentarios.AllowDrop = true;
-            this.textBox_Comentarios.Location = new System.Drawing.Point(33, 160);
+            this.textBox_Comentarios.Location = new System.Drawing.Point(499, 112);
             this.textBox_Comentarios.Multiline = true;
             this.textBox_Comentarios.Name = "textBox_Comentarios";
-            this.textBox_Comentarios.Size = new System.Drawing.Size(525, 151);
+            this.textBox_Comentarios.Size = new System.Drawing.Size(525, 209);
             this.textBox_Comentarios.TabIndex = 3;
+            this.textBox_Comentarios.TextChanged += new System.EventHandler(this.textBox_Comentarios_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 58);
+            this.label3.Location = new System.Drawing.Point(30, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 4;
@@ -93,7 +102,7 @@ namespace Informes_Ecografia
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(366, 33);
+            this.label4.Location = new System.Drawing.Point(617, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 5;
@@ -101,7 +110,7 @@ namespace Informes_Ecografia
             // 
             // textBox_Fecha_
             // 
-            this.textBox_Fecha_.Location = new System.Drawing.Point(466, 33);
+            this.textBox_Fecha_.Location = new System.Drawing.Point(717, 27);
             this.textBox_Fecha_.Name = "textBox_Fecha_";
             this.textBox_Fecha_.ReadOnly = true;
             this.textBox_Fecha_.Size = new System.Drawing.Size(100, 20);
@@ -109,7 +118,7 @@ namespace Informes_Ecografia
             // 
             // textBox_Edad_
             // 
-            this.textBox_Edad_.Location = new System.Drawing.Point(75, 58);
+            this.textBox_Edad_.Location = new System.Drawing.Point(88, 58);
             this.textBox_Edad_.Name = "textBox_Edad_";
             this.textBox_Edad_.ReadOnly = true;
             this.textBox_Edad_.Size = new System.Drawing.Size(100, 20);
@@ -117,7 +126,7 @@ namespace Informes_Ecografia
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(515, 317);
+            this.button1.Location = new System.Drawing.Point(949, 343);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -129,22 +138,106 @@ namespace Informes_Ecografia
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // textControl1
+            // label5
             // 
-            this.textControl1.Font = new System.Drawing.Font("Arial", 10F);
-            this.textControl1.Location = new System.Drawing.Point(515, 99);
-            this.textControl1.Name = "textControl1";
-            this.textControl1.Size = new System.Drawing.Size(600, 200);
-            this.textControl1.TabIndex = 9;
-            this.textControl1.Text = "textControl1";
-            this.textControl1.UserNames = null;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Motivo de Consulta:";
+            // 
+            // textBox_Mot_Consulta
+            // 
+            this.textBox_Mot_Consulta.Location = new System.Drawing.Point(137, 93);
+            this.textBox_Mot_Consulta.Name = "textBox_Mot_Consulta";
+            this.textBox_Mot_Consulta.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Mot_Consulta.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(345, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Tipo de Ecografía:";
+            // 
+            // radioButton_Normal
+            // 
+            this.radioButton_Normal.AutoSize = true;
+            this.radioButton_Normal.Location = new System.Drawing.Point(364, 49);
+            this.radioButton_Normal.Name = "radioButton_Normal";
+            this.radioButton_Normal.Size = new System.Drawing.Size(58, 17);
+            this.radioButton_Normal.TabIndex = 12;
+            this.radioButton_Normal.TabStop = true;
+            this.radioButton_Normal.Text = "Normal";
+            this.radioButton_Normal.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_Anormal
+            // 
+            this.radioButton_Anormal.AutoSize = true;
+            this.radioButton_Anormal.Location = new System.Drawing.Point(364, 73);
+            this.radioButton_Anormal.Name = "radioButton_Anormal";
+            this.radioButton_Anormal.Size = new System.Drawing.Size(63, 17);
+            this.radioButton_Anormal.TabIndex = 13;
+            this.radioButton_Anormal.TabStop = true;
+            this.radioButton_Anormal.Text = "Anormal";
+            this.radioButton_Anormal.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Grado de Higado Graso:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0 (Normal)",
+            "I",
+            "II",
+            "III"});
+            this.comboBox1.Location = new System.Drawing.Point(158, 223);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Medico\\a Solicitante:";
+            // 
+            // textBox_Solicitante
+            // 
+            this.textBox_Solicitante.Location = new System.Drawing.Point(145, 129);
+            this.textBox_Solicitante.Name = "textBox_Solicitante";
+            this.textBox_Solicitante.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Solicitante.TabIndex = 17;
             // 
             // Ecografia_Abdominal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 350);
-            this.Controls.Add(this.textControl1);
+            this.ClientSize = new System.Drawing.Size(1069, 389);
+            this.Controls.Add(this.textBox_Solicitante);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.radioButton_Anormal);
+            this.Controls.Add(this.radioButton_Normal);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox_Mot_Consulta);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_Edad_);
             this.Controls.Add(this.textBox_Fecha_);
@@ -173,6 +266,14 @@ namespace Informes_Ecografia
         private System.Windows.Forms.TextBox textBox_Edad_;
         private System.Windows.Forms.Button button1;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private TXTextControl.TextControl textControl1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox_Mot_Consulta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton radioButton_Normal;
+        private System.Windows.Forms.RadioButton radioButton_Anormal;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox_Solicitante;
     }
 }
