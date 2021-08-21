@@ -53,7 +53,7 @@ namespace Informes_Ecografia
         private void Imprimir(object sender, PrintPageEventArgs e)
         {
             Font Cabezera = new Font("Franklin Gothic Demi", 16, FontStyle.Bold, GraphicsUnit.Point);
-            Font Cuerpo = new Font("Cambria", 14, FontStyle.Regular, GraphicsUnit.Point);
+            Font Cuerpo = new Font("Cambria", 12, FontStyle.Regular, GraphicsUnit.Point);
             Font Titulos = new Font("Cambria", 14, FontStyle.Bold | FontStyle.Underline);
             Font Ecos = new Font("Cambria", 8, FontStyle.Regular, GraphicsUnit.Point);
 
@@ -99,7 +99,7 @@ namespace Informes_Ecografia
             e.Graphics.DrawString("Informe: ", Titulos, Brushes.Black, 260, 370);
 
             e.Graphics.DrawString("Páncreas: ", Titulos, Brushes.Black, 260, 400);
-            e.Graphics.DrawString("de tamaño y forma normal.\nEcoestructura heterogénea.", Cuerpo, Brushes.Black, 350, 400);
+            e.Graphics.DrawString("de tamaño y forma normal. Ecoestructura heterogénea.", Cuerpo, Brushes.Black, 350, 402);
 
 
             e.Graphics.DrawString("Hígado: ", Titulos, Brushes.Black, 260, 440);
