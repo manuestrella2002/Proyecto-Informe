@@ -41,11 +41,8 @@ namespace Informes_Ecografia
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_Mot_Consulta = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.radioButton_Normal = new System.Windows.Forms.RadioButton();
-            this.radioButton_Anormal = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Higado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_Solicitante = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -72,7 +69,7 @@ namespace Informes_Ecografia
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(491, 96);
+            this.label2.Location = new System.Drawing.Point(496, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 2;
@@ -85,7 +82,7 @@ namespace Informes_Ecografia
             this.textBox_Comentarios.Location = new System.Drawing.Point(499, 112);
             this.textBox_Comentarios.Multiline = true;
             this.textBox_Comentarios.Name = "textBox_Comentarios";
-            this.textBox_Comentarios.Size = new System.Drawing.Size(525, 209);
+            this.textBox_Comentarios.Size = new System.Drawing.Size(329, 218);
             this.textBox_Comentarios.TabIndex = 3;
             this.textBox_Comentarios.TextChanged += new System.EventHandler(this.textBox_Comentarios_TextChanged);
             // 
@@ -154,37 +151,6 @@ namespace Informes_Ecografia
             this.textBox_Mot_Consulta.Size = new System.Drawing.Size(100, 20);
             this.textBox_Mot_Consulta.TabIndex = 10;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(345, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Tipo de Ecografía:";
-            // 
-            // radioButton_Normal
-            // 
-            this.radioButton_Normal.AutoSize = true;
-            this.radioButton_Normal.Location = new System.Drawing.Point(364, 49);
-            this.radioButton_Normal.Name = "radioButton_Normal";
-            this.radioButton_Normal.Size = new System.Drawing.Size(58, 17);
-            this.radioButton_Normal.TabIndex = 12;
-            this.radioButton_Normal.TabStop = true;
-            this.radioButton_Normal.Text = "Normal";
-            this.radioButton_Normal.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Anormal
-            // 
-            this.radioButton_Anormal.AutoSize = true;
-            this.radioButton_Anormal.Location = new System.Drawing.Point(364, 73);
-            this.radioButton_Anormal.Name = "radioButton_Anormal";
-            this.radioButton_Anormal.Size = new System.Drawing.Size(63, 17);
-            this.radioButton_Anormal.TabIndex = 13;
-            this.radioButton_Anormal.TabStop = true;
-            this.radioButton_Anormal.Text = "Anormal";
-            this.radioButton_Anormal.UseVisualStyleBackColor = true;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -194,19 +160,19 @@ namespace Informes_Ecografia
             this.label7.TabIndex = 14;
             this.label7.Text = "Grado de Higado Graso:";
             // 
-            // comboBox1
+            // comboBox_Higado
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_Higado.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Higado.FormattingEnabled = true;
+            this.comboBox_Higado.Items.AddRange(new object[] {
             "0 (Normal)",
             "I",
             "II",
             "III"});
-            this.comboBox1.Location = new System.Drawing.Point(158, 223);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 15;
+            this.comboBox_Higado.Location = new System.Drawing.Point(158, 223);
+            this.comboBox_Higado.Name = "comboBox_Higado";
+            this.comboBox_Higado.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_Higado.TabIndex = 15;
             // 
             // label8
             // 
@@ -231,11 +197,8 @@ namespace Informes_Ecografia
             this.ClientSize = new System.Drawing.Size(1069, 389);
             this.Controls.Add(this.textBox_Solicitante);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox_Higado);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.radioButton_Anormal);
-            this.Controls.Add(this.radioButton_Normal);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_Mot_Consulta);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
@@ -268,11 +231,8 @@ namespace Informes_Ecografia
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_Mot_Consulta;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton_Normal;
-        private System.Windows.Forms.RadioButton radioButton_Anormal;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_Higado;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_Solicitante;
     }
