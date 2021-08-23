@@ -29,6 +29,7 @@ namespace Informes_Ecografia
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ecografia_Abdominal));
             this.AyN_Eco_Abd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@ namespace Informes_Ecografia
             this.comboBox_Higado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_Solicitante = new System.Windows.Forms.TextBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
             // AyN_Eco_Abd
@@ -190,6 +192,16 @@ namespace Informes_Ecografia
             this.textBox_Solicitante.Size = new System.Drawing.Size(100, 20);
             this.textBox_Solicitante.TabIndex = 17;
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // Ecografia_Abdominal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,5 +247,6 @@ namespace Informes_Ecografia
         private System.Windows.Forms.ComboBox comboBox_Higado;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_Solicitante;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

@@ -46,9 +46,15 @@ namespace Informes_Ecografia
             
             printDocument1 = new PrintDocument();
             PrinterSettings ps = new PrinterSettings();
+            
             printDocument1.PrinterSettings = ps;
             
             printDocument1.PrintPage += Imprimir;
+        
+            printPreviewDialog1 = new PrintPreviewDialog();
+            printPreviewDialog1.Document=printDocument1;
+            printPreviewDialog1.ShowDialog();
+
             printDocument1.Print();
 
         }
@@ -103,8 +109,10 @@ namespace Informes_Ecografia
 
             e.Graphics.DrawString("Informe: ", Titulos, Brushes.Black, 260, 370);
 
+            e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 860);
+
             //DEPENDE DE TIPO ECOGRAFIA
-            if (comboBox_Higado.Text== "0 (Normal)")
+            if (comboBox_Higado.Text == "0 (Normal)")
             {
                 e.Graphics.DrawString("Páncreas: ", Titulos, Brushes.Black, 260, 400);
                 e.Graphics.DrawString("de tamaño y forma normal. Ecoestructura homogenea.\n Ecogenicidad normal.", Cuerpo, Brushes.Black, 350, 402);
@@ -112,7 +120,7 @@ namespace Informes_Ecografia
 
                 e.Graphics.DrawString("Hígado: ", Titulos, Brushes.Black, 260, 440);
                 e.Graphics.DrawString("de tamaño y forma normal. Contornos Regulares.\nEcogenicidad normal y ecoestructura normal.\nVena porta y supra hepáticas de calibre y flujo conservado.", Cuerpo, Brushes.Black, 350, 442);
-            
+
                 e.Graphics.DrawString("Vía biliar intrahepática: ", Titulos, Brushes.Black, 260, 520);
                 e.Graphics.DrawString("\t\tde calibre normal.", Cuerpo, Brushes.Black, 350, 522);
 
@@ -130,16 +138,95 @@ namespace Informes_Ecografia
 
                 e.Graphics.DrawString("Riñones: ", Titulos, Brushes.Black, 260, 720);
                 e.Graphics.DrawString("de tamaño y forma normal. Contornos regulares.\nEcoestructura y ecogenicidad conservada.\nRelación cortico sinusal normal.", Cuerpo, Brushes.Black, 350, 722);
-               
+
                 e.Graphics.DrawString("Vía excretora: ", Titulos, Brushes.Black, 260, 780);
                 e.Graphics.DrawString("\tSin dilatación.", Cuerpo, Brushes.Black, 335, 782);
 
                 e.Graphics.DrawString("Fondo saco de Douglas: ", Titulos, Brushes.Black, 260, 820);
                 e.Graphics.DrawString("\t\tLibre.", Cuerpo, Brushes.Black, 340, 822);
+            }
+            //INFORME ECO ABDOMINAL HIGADO GRASO TIPO I
+            else if (comboBox_Higado.Text == "I")
+            {
+                e.Graphics.DrawString("Páncreas: ", Titulos, Brushes.Black, 260, 400);
+                e.Graphics.DrawString("de tamaño y forma normal. Ecoestructura homogénea.\n Ecogenicidad aumentada.", Cuerpo, Brushes.Black, 350, 402);
 
-                e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 860);
-              
 
+                e.Graphics.DrawString("Hígado: ", Titulos, Brushes.Black, 260, 440);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos Regulares.\nEcogenicidad normal y ecoestructura heterogénea.\n", Cuerpo, Brushes.Black, 350, 442);
+
+                e.Graphics.DrawString("Higado Graso: ", Titulos, Brushes.Black, 260, 480);
+                e.Graphics.DrawString("de tipo I, compatible con paredes\n y diafragma visible.", Cuerpo, Brushes.Black, 385, 482);
+
+                e.Graphics.DrawString("Vía biliar intrahepática: ", Titulos, Brushes.Black, 260, 520);
+                e.Graphics.DrawString("\t\tde calibre normal.", Cuerpo, Brushes.Black, 350, 522);
+
+                e.Graphics.DrawString("Vía biliar Principal: ", Titulos, Brushes.Black, 260, 560);
+                e.Graphics.DrawString("\ts/p.", Cuerpo, Brushes.Black, 370, 562);
+
+                e.Graphics.DrawString("Vesícula: ", Titulos, Brushes.Black, 260, 600);
+                e.Graphics.DrawString("distendida, piriforme. Con paredes de grosor normal\ny tabique completo. Alitiásica.", Cuerpo, Brushes.Black, 350, 602);
+
+                e.Graphics.DrawString("Bazo:", Titulos, Brushes.Black, 260, 640);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos Regulares.\nEcogenicidad y ecoestructura conservadas.", Cuerpo, Brushes.Black, 325, 642);
+
+                e.Graphics.DrawString("Aorta y VCS: ", Titulos, Brushes.Black, 260, 680);
+                e.Graphics.DrawString("s/p.", Cuerpo, Brushes.Black, 375, 682);
+
+                e.Graphics.DrawString("Riñones: ", Titulos, Brushes.Black, 260, 720);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos regulares.\nEcoestructura y ecogenicidad conservada.\nRelación cortico sinusal normal.", Cuerpo, Brushes.Black, 350, 722);
+
+                e.Graphics.DrawString("Vía excretora: ", Titulos, Brushes.Black, 260, 780);
+                e.Graphics.DrawString("\tSin dilatación.", Cuerpo, Brushes.Black, 335, 782);
+
+                e.Graphics.DrawString("Fondo saco de Douglas: ", Titulos, Brushes.Black, 260, 820);
+                e.Graphics.DrawString("\t\tLibre.", Cuerpo, Brushes.Black, 340, 822);
+            }
+            //INFORME ECO ABDOMINAL HIGADO GRASO TIPO II
+            else if (comboBox_Higado.Text == "II")
+            {
+                e.Graphics.DrawString("Páncreas: ", Titulos, Brushes.Black, 260, 400);
+                e.Graphics.DrawString("de tamaño y forma normal. Ecoestructura homogénea.\n Ecogenicidad aumentada.", Cuerpo, Brushes.Black, 350, 402);
+
+
+                e.Graphics.DrawString("Hígado: ", Titulos, Brushes.Black, 260, 440);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos Regulares.\nEcogenicidad normal y ecoestructura heterogénea.\n", Cuerpo, Brushes.Black, 350, 442);
+
+                e.Graphics.DrawString("Higado Graso: ", Titulos, Brushes.Black, 260, 480);
+                e.Graphics.DrawString("de tipo I, compatible con paredes\n y diafragma visible.", Cuerpo, Brushes.Black, 385, 482);
+
+                e.Graphics.DrawString("Vía biliar intrahepática: ", Titulos, Brushes.Black, 260, 520);
+                e.Graphics.DrawString("\t\tde calibre normal.", Cuerpo, Brushes.Black, 350, 522);
+
+                e.Graphics.DrawString("Vía biliar Principal: ", Titulos, Brushes.Black, 260, 560);
+                e.Graphics.DrawString("\ts/p.", Cuerpo, Brushes.Black, 370, 562);
+
+                e.Graphics.DrawString("Vesícula: ", Titulos, Brushes.Black, 260, 600);
+                e.Graphics.DrawString("distendida, piriforme. Con paredes de grosor normal\ny tabique completo. Alitiásica.", Cuerpo, Brushes.Black, 350, 602);
+
+                e.Graphics.DrawString("Bazo:", Titulos, Brushes.Black, 260, 640);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos Regulares.\nEcogenicidad y ecoestructura conservadas.", Cuerpo, Brushes.Black, 325, 642);
+
+                e.Graphics.DrawString("Aorta y VCS: ", Titulos, Brushes.Black, 260, 680);
+                e.Graphics.DrawString("s/p.", Cuerpo, Brushes.Black, 375, 682);
+
+                e.Graphics.DrawString("Riñones: ", Titulos, Brushes.Black, 260, 720);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos regulares.\nEcoestructura y ecogenicidad conservada.\nRelación cortico sinusal normal.", Cuerpo, Brushes.Black, 350, 722);
+
+                e.Graphics.DrawString("Vía excretora: ", Titulos, Brushes.Black, 260, 780);
+                e.Graphics.DrawString("\tSin dilatación.", Cuerpo, Brushes.Black, 335, 782);
+
+                e.Graphics.DrawString("Fondo saco de Douglas: ", Titulos, Brushes.Black, 260, 820);
+                e.Graphics.DrawString("\t\tLibre.", Cuerpo, Brushes.Black, 340, 822);
+            }
+
+
+            if (textBox_Comentarios.Text.Length == 0)
+            {
+                e.Graphics.DrawString("Sin comentarios.", Cuerpo, Brushes.Black, 260, 882);
+            }
+            else
+            {
                 var item = textBox_Comentarios.Text;
                 const int interval = 51;
                 var words = item.Split();
@@ -166,7 +253,6 @@ namespace Informes_Ecografia
                 e.Graphics.DrawString(result, Cuerpo, Brushes.Black, 260, 882);
 
             }
-
 
 
 
