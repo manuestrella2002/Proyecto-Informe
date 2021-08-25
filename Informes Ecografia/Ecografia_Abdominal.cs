@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
+using System.Security.Permissions;
+
 //using Aspose.Words;
 
 
@@ -51,9 +55,9 @@ namespace Informes_Ecografia
             
             printDocument1.PrintPage += Imprimir;
         
-            printPreviewDialog1 = new PrintPreviewDialog();
-            printPreviewDialog1.Document=printDocument1;
-            printPreviewDialog1.ShowDialog();
+            //printPreviewDialog1 = new PrintPreviewDialog();
+            //printPreviewDialog1.Document=printDocument1;
+            //printPreviewDialog1.ShowDialog();
 
             printDocument1.Print();
 
@@ -65,8 +69,9 @@ namespace Informes_Ecografia
             Font Cuerpo = new Font("Cambria", 12, FontStyle.Regular, GraphicsUnit.Point);
             Font Titulos = new Font("Cambria", 14, FontStyle.Bold | FontStyle.Underline);
             Font Ecos = new Font("Cambria", 8, FontStyle.Regular, GraphicsUnit.Point);
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Imagenes\Icono.png");
 
-            System.Drawing.Image img = System.Drawing.Image.FromFile("C:\\Users\\juanm\\source\\repos\\Proyecto Informe\\Imagenes\\Icono.png");
+            System.Drawing.Image img = System.Drawing.Image.FromFile(path);
             Point loc = new Point(100, 100);
             e.Graphics.DrawImage(img, new Rectangle(625, 45, 100, 85));
 
