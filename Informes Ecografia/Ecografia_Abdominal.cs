@@ -12,7 +12,6 @@ using System.IO;
 using System.Reflection;
 using System.Security.Permissions;
 
-//using Aspose.Words;
 
 
 
@@ -54,11 +53,10 @@ namespace Informes_Ecografia
             printDocument1.PrinterSettings = ps;
             
             printDocument1.PrintPage += Imprimir;
-        
-            //printPreviewDialog1 = new PrintPreviewDialog();
-            //printPreviewDialog1.Document=printDocument1;
-            //printPreviewDialog1.ShowDialog();
 
+            //printPreviewDialog1 = new PrintPreviewDialog();
+            //printPreviewDialog1.Document = printDocument1;
+            //printPreviewDialog1.ShowDialog();
             printDocument1.Print();
 
         }
@@ -114,7 +112,7 @@ namespace Informes_Ecografia
 
             e.Graphics.DrawString("Informe: ", Titulos, Brushes.Black, 260, 370);
 
-            e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 860);
+         
 
             //DEPENDE DE TIPO ECOGRAFIA
             if (comboBox_Higado.Text == "0 (Normal)")
@@ -224,41 +222,74 @@ namespace Informes_Ecografia
                 e.Graphics.DrawString("Fondo saco de Douglas: ", Titulos, Brushes.Black, 260, 820);
                 e.Graphics.DrawString("\t\tLibre.", Cuerpo, Brushes.Black, 340, 822);
             }
-
-
-            if (textBox_Comentarios.Text.Length == 0)
+            //HIGADO GRASO TIPO III
+            else if (comboBox_Higado.Text == "III")
             {
-                e.Graphics.DrawString("Sin comentarios.", Cuerpo, Brushes.Black, 260, 882);
+                e.Graphics.DrawString("Páncreas: ", Titulos, Brushes.Black, 260, 400);
+                e.Graphics.DrawString("de tamaño y forma normal. Ecoestructura homogénea.\n Ecogenicidad aumentada.", Cuerpo, Brushes.Black, 350, 402);
+
+
+                e.Graphics.DrawString("Hígado: ", Titulos, Brushes.Black, 260, 440);
+                e.Graphics.DrawString(BajarTexto("de tamaño y forma normal. Contornos regulares." +
+                    " Ecoestructura homogénea y ecogenicidad aumentada," +
+                    " con falta de visualización de paredes vasculares y diafragma."), Cuerpo, Brushes.Black, 350, 442);
+
+                e.Graphics.DrawString("Higado Graso: ", Titulos, Brushes.Black, 260, 520);
+                e.Graphics.DrawString("de tipo III", Cuerpo, Brushes.Black, 385, 522);
+
+                e.Graphics.DrawString("Vía biliar intrahepática: ", Titulos, Brushes.Black, 260, 560);
+                e.Graphics.DrawString("\t\tde calibre normal.", Cuerpo, Brushes.Black, 350, 562);
+
+                e.Graphics.DrawString("Vía biliar Principal: ", Titulos, Brushes.Black, 260, 600);
+                e.Graphics.DrawString("\ts/p.", Cuerpo, Brushes.Black, 370, 602);
+
+                e.Graphics.DrawString("Vesícula: ", Titulos, Brushes.Black, 260, 640);
+                e.Graphics.DrawString("distendida, piriforme. Con paredes de grosor normal\ny tabique completo. Alitiásica.", Cuerpo, Brushes.Black, 350, 642);
+
+                e.Graphics.DrawString("Bazo:", Titulos, Brushes.Black, 260, 680);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos Regulares.\nEcogenicidad y ecoestructura conservadas.", Cuerpo, Brushes.Black, 325, 682);
+
+                e.Graphics.DrawString("Aorta y VCS: ", Titulos, Brushes.Black, 260, 720);
+                e.Graphics.DrawString("s/p.", Cuerpo, Brushes.Black, 375, 722);
+
+                e.Graphics.DrawString("Riñones: ", Titulos, Brushes.Black, 260, 760);
+                e.Graphics.DrawString("de tamaño y forma normal. Contornos regulares.\nEcoestructura y ecogenicidad conservada.\nRelación cortico sinusal normal.", Cuerpo, Brushes.Black, 350, 762);
+
+                e.Graphics.DrawString("Vía excretora: ", Titulos, Brushes.Black, 260, 820);
+                e.Graphics.DrawString("\tSin dilatación.", Cuerpo, Brushes.Black, 335, 822);
+
+                e.Graphics.DrawString("Fondo saco de Douglas: ", Titulos, Brushes.Black, 260, 860);
+                e.Graphics.DrawString("\t\tLibre.", Cuerpo, Brushes.Black, 340, 862);
+            }
+
+        
+            if (comboBox_Higado.Text != "III")
+            {
+                e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 860);
+                if (textBox_Comentarios.Text.Length == 0)
+                {
+                    e.Graphics.DrawString("Sin comentarios.", Cuerpo, Brushes.Black, 260, 882);
+                }
+                else
+                {
+
+                    e.Graphics.DrawString(BajarTexto(textBox_Comentarios.Text), Cuerpo, Brushes.Black, 260, 882);
+
+                }
             }
             else
             {
-                var item = textBox_Comentarios.Text;
-                const int interval = 51;
-                var words = item.Split();
-                var result = "";
-                var symbolsInCurrentLine = 0;
-                foreach (var word in words)
+                e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 900);
+                if (textBox_Comentarios.Text.Length == 0)
                 {
-                    if (word.Length + symbolsInCurrentLine > interval)  // after adding word line will be longer than required
-                    {
-                        result += "\n";
-                        symbolsInCurrentLine = 0;
-                    }
-                    else
-                    {
-                        if (symbolsInCurrentLine > 0)  // add space after previous word if needed
-                        {
-                            result += " ";
-                            symbolsInCurrentLine++;
-                        }
-                        result += word;  // append word
-                        symbolsInCurrentLine += word.Length;
-                    }
+                    e.Graphics.DrawString("Sin comentarios.", Cuerpo, Brushes.Black, 260, 922);
                 }
-                e.Graphics.DrawString(result, Cuerpo, Brushes.Black, 260, 882);
+                else
+                {
+                    e.Graphics.DrawString(BajarTexto(textBox_Comentarios.Text), Cuerpo, Brushes.Black, 260, 922);
 
+                }
             }
-
 
 
             //ESTRUCTURA INFORME 
@@ -288,18 +319,43 @@ namespace Informes_Ecografia
             e.Graphics.DrawString("SCAN MORFOLOGICO FETAL", Ecos, Brushes.Gray, 55, 1070);
             e.Graphics.DrawString("TRIPLE SCREENING", Ecos, Brushes.Gray, 55, 1090);
             e.Graphics.DrawString("ECOGRAFIA TRANSVAGINAL", Ecos, Brushes.Gray, 55, 1130);
-
-
-
-
-
-
-
         }
 
         private void textBox_Comentarios_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        //FUNCION BAJADA AUTOMATICA DE TEXTO
+        public string BajarTexto(string texto_)
+        {
+            var item = texto_;
+            const int interval = 55;
+            var words = item.Split();
+            var result = "";
+            var symbolsInCurrentLine = 0;
+            foreach (var word in words)
+            {
+                if (word.Length + symbolsInCurrentLine > interval)  // after adding word line will be longer than required
+                {
+                    result += "\n";
+                    symbolsInCurrentLine = 0;
+                }
+                else
+                {
+                    if (symbolsInCurrentLine > 0)  // add space after previous word if needed
+                    {
+                        result += " ";
+                        symbolsInCurrentLine++;
+                    }
+                    result += word;  // append word
+                    symbolsInCurrentLine += word.Length;
+                }
+            }
+            return result;
+        }
     }
 }
+
+
+

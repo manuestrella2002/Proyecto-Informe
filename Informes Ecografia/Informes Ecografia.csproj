@@ -70,6 +70,12 @@
     <Compile Include="Ecografia_Abdominal.Designer.cs">
       <DependentUpon>Ecografia_Abdominal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ecografia_Cerebral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ecografia_Cerebral.Designer.cs">
+      <DependentUpon>Ecografia_Cerebral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Ecografia_Abdominal.resx">
       <DependentUpon>Ecografia_Abdominal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ecografia_Cerebral.resx">
+      <DependentUpon>Ecografia_Cerebral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.es-AR.resx">
       <DependentUpon>Main.cs</DependentUpon>

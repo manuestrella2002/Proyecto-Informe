@@ -82,9 +82,10 @@ namespace Informes_Ecografia
             this.textBox_Comentarios.AcceptsTab = true;
             this.textBox_Comentarios.AllowDrop = true;
             this.textBox_Comentarios.Location = new System.Drawing.Point(499, 112);
+            this.textBox_Comentarios.MaxLength = 590;
             this.textBox_Comentarios.Multiline = true;
             this.textBox_Comentarios.Name = "textBox_Comentarios";
-            this.textBox_Comentarios.Size = new System.Drawing.Size(329, 218);
+            this.textBox_Comentarios.Size = new System.Drawing.Size(329, 155);
             this.textBox_Comentarios.TabIndex = 3;
             this.textBox_Comentarios.TextChanged += new System.EventHandler(this.textBox_Comentarios_TextChanged);
             // 
@@ -125,7 +126,7 @@ namespace Informes_Ecografia
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(949, 343);
+            this.button1.Location = new System.Drawing.Point(761, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -206,7 +207,7 @@ namespace Informes_Ecografia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 389);
+            this.ClientSize = new System.Drawing.Size(848, 330);
             this.Controls.Add(this.textBox_Solicitante);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox_Higado);

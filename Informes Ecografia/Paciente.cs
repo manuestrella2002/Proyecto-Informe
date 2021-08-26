@@ -32,17 +32,18 @@ namespace Informes_Ecografia
             if (TextBox_Tipo_Ecografía.Text == "Abdominal")
             {
                 this.Hide();
-                Ecografia_Abdominal Eco1 = new Ecografia_Abdominal(textBox_Apellido.Text + " " + textBox_Nombre.Text, textBox_Edad.Text, maskedTextBox_Fecha.Text);
-                Eco1.ShowDialog();
+                Ecografia_Abdominal Eco_Abdominal = new Ecografia_Abdominal(textBox_Apellido.Text + " " + textBox_Nombre.Text, textBox_Edad.Text, maskedTextBox_Fecha.Text);
+                Eco_Abdominal.ShowDialog();
             }
-            /*
+            
             if (TextBox_Tipo_Ecografía.Text == "Cerebral")
             {
                 this.Hide();
-                Ecografia_Abdominal Eco1 = new Ecografia_Abdominal();
-                Eco1.ShowDialog();
+                Ecografia_Cerebral Eco_Cerebral = new Ecografia_Cerebral(textBox_Apellido.Text + " " + textBox_Nombre.Text, textBox_Edad.Text, maskedTextBox_Fecha.Text);
+                Eco_Cerebral.ShowDialog();
                 this.Show();
             }
+            /*
             if (TextBox_Tipo_Ecografía.Text == "Hepatica")
             {
                 this.Hide();

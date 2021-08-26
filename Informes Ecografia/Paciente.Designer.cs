@@ -124,19 +124,17 @@ namespace Informes_Ecografia
             this.TextBox_Tipo_Ecografía.FormattingEnabled = true;
             this.TextBox_Tipo_Ecografía.Items.AddRange(new object[] {
             "Abdominal",
-            "Cerebal",
+            "Cerebral",
             "Obstetrica",
             "Hepatica",
             "Musculo-esqueletica",
             "Renal",
             "Reno-Vesical",
-            "Obstetrica",
             "Pancreatica",
             "Testicular",
             "Transvaginal",
             "Vesical",
             "4D",
-            "",
             ""});
             this.TextBox_Tipo_Ecografía.Location = new System.Drawing.Point(118, 195);
             this.TextBox_Tipo_Ecografía.Name = "TextBox_Tipo_Ecografía";
