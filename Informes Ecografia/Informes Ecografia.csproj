@@ -76,6 +76,30 @@
     <Compile Include="Ecografia_Cerebral.Designer.cs">
       <DependentUpon>Ecografia_Cerebral.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ecografia_Hepatica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ecografia_Hepatica.Designer.cs">
+      <DependentUpon>Ecografia_Hepatica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ecografia_Musculo_Esqueletica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ecografia_Musculo_Esqueletica.Designer.cs">
+      <DependentUpon>Ecografia_Musculo_Esqueletica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ecografia_Obstetrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ecografia_Obstetrica.Designer.cs">
+      <DependentUpon>Ecografia_Obstetrica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ecografia_Renal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ecografia_Renal.Designer.cs">
+      <DependentUpon>Ecografia_Renal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +119,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ecografia_Cerebral.resx">
       <DependentUpon>Ecografia_Cerebral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ecografia_Hepatica.resx">
+      <DependentUpon>Ecografia_Hepatica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ecografia_Musculo_Esqueletica.resx">
+      <DependentUpon>Ecografia_Musculo_Esqueletica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ecografia_Obstetrica.resx">
+      <DependentUpon>Ecografia_Obstetrica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ecografia_Renal.resx">
+      <DependentUpon>Ecografia_Renal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.es-AR.resx">
       <DependentUpon>Main.cs</DependentUpon>

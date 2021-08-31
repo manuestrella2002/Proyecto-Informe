@@ -153,6 +153,7 @@ namespace Informes_Ecografia
             this.textBox_Mot_Consulta.Name = "textBox_Mot_Consulta";
             this.textBox_Mot_Consulta.Size = new System.Drawing.Size(100, 20);
             this.textBox_Mot_Consulta.TabIndex = 10;
+            this.textBox_Mot_Consulta.TextChanged += new System.EventHandler(this.textBox_Mot_Consulta_TextChanged);
             // 
             // label7
             // 

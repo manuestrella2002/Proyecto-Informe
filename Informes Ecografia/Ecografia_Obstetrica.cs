@@ -13,25 +13,22 @@ using System.Reflection;
 using System.Security.Permissions;
 
 
-
-
-
 namespace Informes_Ecografia
 {
-    public partial class Ecografia_Abdominal : Form
+    public partial class Ecografia_Obstetrica : Form
     {
-        public Ecografia_Abdominal(String NyA,string Edad_, string Fecha_)
+        public Ecografia_Obstetrica(String NyA, string Edad_, string Fecha_)
         {
             InitializeComponent();
             AyN_Eco_Abd.Text = NyA;
             textBox_Edad_.Text = Edad_;
             textBox_Fecha_.Text = Fecha_;
-            
+
         }
 
         private void AyN_Eco_Abd_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -43,15 +40,15 @@ namespace Informes_Ecografia
         {
 
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             printDocument1 = new PrintDocument();
             PrinterSettings ps = new PrinterSettings();
-            
+
             printDocument1.PrinterSettings = ps;
-            
+
             printDocument1.PrintPage += Imprimir;
 
             //printPreviewDialog1 = new PrintPreviewDialog();
@@ -101,9 +98,9 @@ namespace Informes_Ecografia
 
 
             e.Graphics.DrawString("Ecografía: ", Titulos, Brushes.Black, 260, 260);
-            
+
             //FIJARSE TIPO ECOGRAFIA
-            e.Graphics.DrawString("Abdominal", Cuerpo, Brushes.Black, 355, 262);
+            e.Graphics.DrawString("Obstetrica/Ginecologica", Cuerpo, Brushes.Black, 355, 262);
 
 
             e.Graphics.DrawString("Motivo de Consulta: ", Titulos, Brushes.Black, 260, 300);
@@ -112,7 +109,7 @@ namespace Informes_Ecografia
 
             e.Graphics.DrawString("Informe: ", Titulos, Brushes.Black, 260, 370);
 
-         
+
 
             //DEPENDE DE TIPO ECOGRAFIA
             if (comboBox_Higado.Text == "0 (Normal)")
@@ -262,7 +259,7 @@ namespace Informes_Ecografia
                 e.Graphics.DrawString("\t\tLibre.", Cuerpo, Brushes.Black, 340, 862);
             }
 
-        
+
             if (comboBox_Higado.Text != "III")
             {
                 e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 860);
@@ -361,6 +358,3 @@ namespace Informes_Ecografia
         }
     }
 }
-
-
-

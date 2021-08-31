@@ -12,12 +12,11 @@ using System.IO;
 using System.Reflection;
 using System.Security.Permissions;
 
-
 namespace Informes_Ecografia
 {
-    public partial class Ecografia_Cerebral : Form
+    public partial class Ecografia_Renal : Form
     {
-        public Ecografia_Cerebral(String NyA, string Edad_, string Fecha_)
+        public Ecografia_Renal(String NyA, string Edad_, string Fecha_)
         {
             InitializeComponent();
             AyN_Eco_Cerebral.Text = NyA;
@@ -89,7 +88,7 @@ namespace Informes_Ecografia
             e.Graphics.DrawString("Ecografía: ", Titulos, Brushes.Black, 260, 260);
 
             //FIJARSE TIPO ECOGRAFIA
-            e.Graphics.DrawString("Abdominal", Cuerpo, Brushes.Black, 355, 262);
+            e.Graphics.DrawString("Renal", Cuerpo, Brushes.Black, 355, 262);
 
 
             e.Graphics.DrawString("Motivo de Consulta: ", Titulos, Brushes.Black, 260, 300);
@@ -100,7 +99,7 @@ namespace Informes_Ecografia
 
             e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 860);
 
-            if (textBox_Comentarios.Text.Length==0)
+            if (textBox_Comentarios.Text.Length == 0)
             {
                 e.Graphics.DrawString("Sin comentarios.", Cuerpo, Brushes.Black, 260, 882);
 
