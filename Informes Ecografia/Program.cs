@@ -16,7 +16,10 @@ namespace Informes_Ecografia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            //Application.Run(new Main());
+            Application.Run(new Ecografia_Cerebral("Juan","18","01/10/2021"));
+            
+
         }
     }
 }

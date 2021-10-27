@@ -23,6 +23,7 @@ namespace Informes_Ecografia
             AyN_Eco_Cerebral.Text = NyA;
             textBox_Edad_.Text = Edad_;
             textBox_Fecha_.Text = Fecha_;
+            
 
         }
 
@@ -89,22 +90,60 @@ namespace Informes_Ecografia
             e.Graphics.DrawString("Ecografía: ", Titulos, Brushes.Black, 260, 260);
 
             //FIJARSE TIPO ECOGRAFIA
-            e.Graphics.DrawString("Abdominal", Cuerpo, Brushes.Black, 355, 262);
+            e.Graphics.DrawString("Cerebral", Cuerpo, Brushes.Black, 355, 262);
 
 
             e.Graphics.DrawString("Motivo de Consulta: ", Titulos, Brushes.Black, 260, 300);
-            e.Graphics.DrawString(textBox_Mot_Consulta.Text, Cuerpo, Brushes.Black, 450, 300);
+            e.Graphics.DrawString(textBox_Mot_Consulta.Text, Cuerpo, Brushes.Black, 450, 302);
 
 
             e.Graphics.DrawString("Informe: ", Titulos, Brushes.Black, 260, 370);
+
+            e.Graphics.DrawString("Cortes coronales y sagitales realizados a nivel de la fontanela anterior:", Cuerpo, Brushes.Black,260, 400);
+
+            e.Graphics.DrawString("Estructuras Infraselares: ", Titulos, Brushes.Black, 260, 440);
+            e.Graphics.DrawString("tronco y cerebelo son de tamaño\n y forma normal. Ecoestructura y \necogenicidad conservadas.", Cuerpo, Brushes.Black, 500, 442);
+
+            e.Graphics.DrawString("Ventriculos: ", Titulos, Brushes.Black, 260, 520);
+           
+            e.Graphics.DrawString("Tercer Ventriculo:", Titulos, Brushes.Black, 280, 540);
+            e.Graphics.DrawString("de forma y tamaño normal.", Cuerpo, Brushes.Black, 450, 542);
+
+            e.Graphics.DrawString("Cuarto Ventriculo:", Titulos, Brushes.Black, 280, 560);
+            e.Graphics.DrawString("de forma y tamaño normal.", Cuerpo, Brushes.Black, 450, 562);
+            
+            e.Graphics.DrawString("Ventriculos Laterales:", Titulos, Brushes.Black, 280, 580);
+            e.Graphics.DrawString("VLD:"+textBox_VLD.Text+"cm"+"\tVLI:"+textBox_VLI.Text+"cm", Cuerpo, Brushes.Black, 500, 582);
+
+
+            e.Graphics.DrawString("Plexos coroideos:", Titulos, Brushes.Black, 260, 620);
+            e.Graphics.DrawString("de tamaño y forma normal. Contornos Regulares.\nEcogenicidad y ecoestructura conservadas.", Cuerpo, Brushes.Black, 420, 622);
+
+            e.Graphics.DrawString("Nucleos Basales: ", Titulos, Brushes.Black, 260, 660);
+            e.Graphics.DrawString("de caracteristicas normales.", Cuerpo, Brushes.Black, 410, 662);
+
+            e.Graphics.DrawString("Cuerpo Calloso: ", Titulos, Brushes.Black, 260, 700);
+            e.Graphics.DrawString("de caracteristicas normales.", Cuerpo, Brushes.Black, 410, 702);
+
+
+            e.Graphics.DrawString("Parénquima Cerebral: ", Titulos, Brushes.Black, 260, 740);
+            e.Graphics.DrawString("ecoestructura y ecogenicidad conservada.", Cuerpo, Brushes.Black, 460, 742);
+
+            e.Graphics.DrawString("Surcos subaracnoideos: ", Titulos, Brushes.Black, 260, 780);
+            e.Graphics.DrawString("Normales.", Cuerpo, Brushes.Black, 475, 782);
+
 
             e.Graphics.DrawString("Comentarios: ", Titulos, Brushes.Black, 260, 860);
 
             if (textBox_Comentarios.Text.Length==0)
             {
                 e.Graphics.DrawString("Sin comentarios.", Cuerpo, Brushes.Black, 260, 882);
-
             }
+            else
+            {
+                e.Graphics.DrawString(BajarTexto(textBox_Comentarios.Text), Cuerpo, Brushes.Black, 260, 902);
+            }
+
 
             //ESTRUCTURA INFORME 
             e.Graphics.DrawString("DOPPLER FETAL", Ecos, Brushes.Gray, 55, 150);
@@ -163,6 +202,11 @@ namespace Informes_Ecografia
         }
 
         private void AyN_Eco_Cerebral_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_VLD_TextChanged(object sender, EventArgs e)
         {
 
         }

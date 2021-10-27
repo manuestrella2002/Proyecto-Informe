@@ -43,6 +43,12 @@ namespace Informes_Ecografia
             this.label1 = new System.Windows.Forms.Label();
             this.AyN_Eco_Cerebral = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label_VLD = new System.Windows.Forms.Label();
+            this.label_VLI = new System.Windows.Forms.Label();
+            this.textBox_VLD = new System.Windows.Forms.TextBox();
+            this.textBox_VLI = new System.Windows.Forms.TextBox();
+            this.label_cm = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_Solicitante
@@ -160,11 +166,68 @@ namespace Informes_Ecografia
             this.AyN_Eco_Cerebral.TabIndex = 18;
             this.AyN_Eco_Cerebral.TextChanged += new System.EventHandler(this.AyN_Eco_Cerebral_TextChanged);
             // 
+            // label_VLD
+            // 
+            this.label_VLD.AutoSize = true;
+            this.label_VLD.Location = new System.Drawing.Point(28, 158);
+            this.label_VLD.Name = "label_VLD";
+            this.label_VLD.Size = new System.Drawing.Size(31, 13);
+            this.label_VLD.TabIndex = 33;
+            this.label_VLD.Text = "VLD:";
+            // 
+            // label_VLI
+            // 
+            this.label_VLI.AutoSize = true;
+            this.label_VLI.Location = new System.Drawing.Point(28, 183);
+            this.label_VLI.Name = "label_VLI";
+            this.label_VLI.Size = new System.Drawing.Size(26, 13);
+            this.label_VLI.TabIndex = 34;
+            this.label_VLI.Text = "VLI:";
+            // 
+            // textBox_VLD
+            // 
+            this.textBox_VLD.Location = new System.Drawing.Point(69, 154);
+            this.textBox_VLD.Name = "textBox_VLD";
+            this.textBox_VLD.Size = new System.Drawing.Size(45, 20);
+            this.textBox_VLD.TabIndex = 35;
+            this.textBox_VLD.TextChanged += new System.EventHandler(this.textBox_VLD_TextChanged);
+            // 
+            // textBox_VLI
+            // 
+            this.textBox_VLI.Location = new System.Drawing.Point(69, 180);
+            this.textBox_VLI.Name = "textBox_VLI";
+            this.textBox_VLI.Size = new System.Drawing.Size(45, 20);
+            this.textBox_VLI.TabIndex = 36;
+            // 
+            // label_cm
+            // 
+            this.label_cm.AutoSize = true;
+            this.label_cm.Location = new System.Drawing.Point(120, 161);
+            this.label_cm.Name = "label_cm";
+            this.label_cm.Size = new System.Drawing.Size(21, 13);
+            this.label_cm.TabIndex = 37;
+            this.label_cm.Text = "cm";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(120, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 13);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "cm";
+            // 
             // Ecografia_Cerebral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 333);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_cm);
+            this.Controls.Add(this.textBox_VLI);
+            this.Controls.Add(this.textBox_VLD);
+            this.Controls.Add(this.label_VLI);
+            this.Controls.Add(this.label_VLD);
             this.Controls.Add(this.textBox_Solicitante);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox_Mot_Consulta);
@@ -202,5 +265,11 @@ namespace Informes_Ecografia
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox AyN_Eco_Cerebral;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label label_VLD;
+        private System.Windows.Forms.Label label_VLI;
+        private System.Windows.Forms.TextBox textBox_VLD;
+        private System.Windows.Forms.TextBox textBox_VLI;
+        private System.Windows.Forms.Label label_cm;
+        private System.Windows.Forms.Label label6;
     }
 }
